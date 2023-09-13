@@ -1,4 +1,5 @@
 import './Todoitem.css'
+import { BsFillTrashFill } from "react-icons/bs";
 
 function Todoitem(props){
     let {id, completed, label} = props
@@ -13,7 +14,7 @@ function Todoitem(props){
             onChange={() => {props.toggleTaskCompleted(id)}}
             type="checkbox" />
             <button 
-            onClick={() => {props.deleteTask(id)}}>Delet</button>
+            onClick={() => {props.deleteTask(id)}}><BsFillTrashFill/></button>
         </li>
     )
 }

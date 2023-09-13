@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react'
 import Todoitem from './Todoitem' 
+import './Todolist.css'
 
 
 function Todolist(){
@@ -15,14 +16,21 @@ useEffect(() => {
 const addTodo = () => {
     const newTodo = document.getElementById('newTodo').value
     if (newTodo === '') return
-    var newTodos = [...todos, { id: todos.length + 1, label: newTodo, completed: false}]
+    let newTodos = [...todos, { id: todos.length + 1, label: newTodo, completed: false}]
+    if(todos.length > 0){
     newTodos = [...todos, {id: todos[todos.length-1].id+1, label: newTodo, completed: false}]
+    }
     setTodos(newTodos)
 }
 
 const toggleTaskCompleted = (id) => {
       const newTodos = todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo)
       setTodos(newTodos)
+}
+
+const toggleAllCompleted = (id) => {
+    const newTodos = todos.map(todo => todo.completed  == false ? {...todo, completed: !todo.completed} : todo)
+    setTodos(newTodos)
 }
 
 const deleteTask = (id) => {
@@ -42,6 +50,7 @@ const deleteAll = (id) => {
     <input id="newTodo" type="text" placeholder="Skriv in dina föremål"/>
     <button onClick={() => {addTodo()}}>TRYCK</button>
     <button onClick={() => {deleteAll()}}>delet all</button>
+    <button onClick={() => {toggleAllCompleted()}}>check all</button>
         <ul className="todo-list">
           {todos.map((todo, index) =>
           <Todoitem
