@@ -1,0 +1,10 @@
+.container {
+    width: min(52rem, 100vw - 4rem);
+    align-items: center;
+    padding: 1rem 0;
+    font-size: 1.4rem;
+  }
+  
+  todo-item input[type="checkbox"]{
+    margin-left: 1rem;
+  }
