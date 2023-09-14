@@ -5,6 +5,21 @@
   text-align: center;
 }
 
+ul{
+  padding-top: 3rem;
+  
+}
+
+li{
+  background-color: #343a40;
+  padding: 0.3rem;
+  margin-top: 1rem;
+}
+
+label{
+  margin-right: 10px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -34,7 +49,7 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 2rem;
 }
 
 .read-the-docs {
@@ -43,5 +58,10 @@
 
 .todo-list{
   list-style-type: none;
+}
+
+.checkBox{
+  height: 1.5rem;
+  width: 1.5rem;
 }
 

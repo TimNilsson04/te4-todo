@@ -4,6 +4,16 @@
 
 body{
   font-family: var(font-base);
+  background-color: #212529;
+  color: #fff;
+}
+
+button{
+  margin-left: 0.5rem;
+}
+
+h1{
+  margin-bottom: 20px;
 }
 
 .container{
