@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import './App.css'
-import Todoitem from './components/Todoitem' 
 import Todolist from './components/Todolist'
+
 
 function App() {
 return (
