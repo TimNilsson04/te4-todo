@@ -63,9 +63,10 @@ const deleteAll = (id) => {
     <>
     <div className='addTasks'>
       <input id="newTodo" type="text" placeholder="Skriv in dina föremål"/>
-            <button id='myBtn' className="btn btn-primary d-inline-flex align-items-center" onClick={() => { addTodo() }}>TRYCK</button>
-            <button className="btn btn-primary d-inline-flex align-items-center" onClick={() => { deleteAll() }}>delet all</button>
-            <button className="btn btn-primary d-inline-flex align-items-center" onClick={() => { toggleAllCompleted() }}>check/uncheck all</button>
+      <br/>
+            <button id='myBtn' className="btn btn-primary d-inline-flex align-items-center" onClick={() => { addTodo() }}>Skriv</button>
+            <button className="btn btn-primary d-inline-flex align-items-center" onClick={() => { deleteAll() }}>Delete all</button>
+            <button className="btn btn-primary d-inline-flex align-items-center" onClick={() => { toggleAllCompleted() }}>Check/Uncheck all</button>
             </div>
             <ul className="todo-list">
                 {todos.map((todo, index) =>

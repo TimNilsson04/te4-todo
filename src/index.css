@@ -16,6 +16,10 @@ h1{
   margin-bottom: 20px;
 }
 
+input{
+  margin-bottom: 10px;
+}
+
 .container{
   width: min(52rem, 100vw, - 4rem);
   margin-inline: auto;
