@@ -6,13 +6,13 @@ import Todoitem from './Todoitem';
 
 function Todolist(){
 const[todos, setTodos] = useState(() => {
-    return JSON.parse(localStorage.getItem('todos')) || [];
-});
+    return JSON.parse(localStorage.getItem('todos')) || []
+})
 
 
 useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-}, [todos]);
+    localStorage.setItem('todos', JSON.stringify(todos))
+}, [todos])
 
 const addTodo = () => {
     const newTodo = document.getElementById('newTodo').value
@@ -22,14 +22,14 @@ const addTodo = () => {
     newTodos = [...todos, {id: todos[todos.length-1].id+1, label: newTodo, completed: false}]
     }
     document.getElementById('newTodo').value = ''
-    document.getElementById("newTodo").focus();
-    var input = document.getElementById("newTodo");
+    document.getElementById("newTodo").focus()
+    var input = document.getElementById("newTodo")
     input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
           event.preventDefault();
-          document.getElementById("myBtn").click();
+          document.getElementById("myBtn").click()
         }
-      });
+      })
     setTodos(newTodos)
 }
 
@@ -50,13 +50,13 @@ const toggleAllCompleted = (id) => {
 const deleteTask = (id) => {
    const newTodos = todos.filter(todo => {
     return todo.id !== id})
-   setTodos(newTodos);
+   setTodos(newTodos)
 }
 
 const deleteAll = (id) => {
     const newTodos = todos.filter(todo => {
      return id !== id})
-    setTodos(newTodos);
+    setTodos(newTodos)
 }
 
  return (
