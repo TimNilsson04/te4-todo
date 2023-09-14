@@ -5,7 +5,9 @@ import Todolist from './components/Todolist'
 function App() {
 return (
   <div className="container">
-        <h1>HEJSAN</h1>
+        <h1>Skriv din checklista <br/>
+          \/
+        </h1>
   <Todolist/>
   </div>
 )

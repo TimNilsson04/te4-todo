@@ -11,6 +11,7 @@ function Todoitem(props){
                 {props.label}
             </label>
             <input 
+            className='checkBox'
             checked={completed} 
             onChange={() => {props.toggleTaskCompleted(id)}}
             type="checkbox" />

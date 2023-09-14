@@ -1,5 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import { useState,useEffect } from 'react'
-import './Todolist.css'
 import Todoitem from './Todoitem';
 // import NewTodo from './NewTodo'
 
@@ -21,8 +21,20 @@ const addTodo = () => {
     if(todos.length > 0){
     newTodos = [...todos, {id: todos[todos.length-1].id+1, label: newTodo, completed: false}]
     }
+    document.getElementById('newTodo').value = ''
+    document.getElementById("newTodo").focus();
+    var input = document.getElementById("newTodo");
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("myBtn").click();
+        }
+      });
     setTodos(newTodos)
 }
+
+
+  
 
 const toggleTaskCompleted = (id) => {
       const newTodos = todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo)
@@ -45,14 +57,16 @@ const deleteAll = (id) => {
     const newTodos = todos.filter(todo => {
      return id !== id})
     setTodos(newTodos);
- }
+}
 
  return (
     <>
-      <input id="newTodo" type="text" placeholder="Skriv in dina föremål" />
-            <button onClick={() => { addTodo() }}>TRYCK</button>
-            <button onClick={() => { deleteAll() }}>delet all</button>
-            <button onClick={() => { toggleAllCompleted() }}>check/uncheck all</button>
+    <div className='addTasks'>
+      <input id="newTodo" type="text" placeholder="Skriv in dina föremål"/>
+            <button id='myBtn' className="btn btn-primary d-inline-flex align-items-center" onClick={() => { addTodo() }}>TRYCK</button>
+            <button className="btn btn-primary d-inline-flex align-items-center" onClick={() => { deleteAll() }}>delet all</button>
+            <button className="btn btn-primary d-inline-flex align-items-center" onClick={() => { toggleAllCompleted() }}>check/uncheck all</button>
+            </div>
             <ul className="todo-list">
                 {todos.map((todo, index) =>
                     <Todoitem
