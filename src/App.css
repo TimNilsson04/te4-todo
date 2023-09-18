@@ -5,18 +5,18 @@
   text-align: center;
 }
 
-ul{
+ul {
   padding-top: 3rem;
-  
+
 }
 
-li{
+li {
   background-color: #343a40;
   padding: 0.3rem;
   margin-top: 1rem;
 }
 
-label{
+label {
   margin-right: 10px;
 }
 
@@ -26,9 +26,11 @@ label{
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -37,6 +39,7 @@ label{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -56,12 +59,11 @@ label{
   color: #888;
 }
 
-.todo-list{
+.todo-list {
   list-style-type: none;
 }
 
-.checkBox{
-  height: 1.5rem;
-  width: 1.5rem;
+.checkBox {
+  height: 1rem;
+  width: 1rem;
 }
-
